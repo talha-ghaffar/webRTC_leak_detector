@@ -1,4 +1,4 @@
-# PureVPN WebRTC Leak Detection Tool
+# WebRTC Leak Detection Tool
 > Flask, Python & JavaScript
 > A WebApp for detecting WebRTC Leak on a user's PC
 
