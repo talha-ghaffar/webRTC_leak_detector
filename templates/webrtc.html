@@ -4,7 +4,12 @@
 <h2>WEBRTC DETECTOR</h2>
 <p>The project check for webrtc leaks</p>
 
-<!--<script src="/cdn-cgi/apps/head/L9pwQ98qsIFaCiVd5vxR4_e62ZQ.js"></script><link href="style.css" type="text/css" rel="stylesheet"> -->
+
+<h4>Your local IP address:</h4>
+<ul></ul>
+<h4>Your Public IP address:</h4>
+<ul></ul>
+
 <script>
 function findIP(onNewIP) {
   var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
@@ -15,6 +20,7 @@ function findIP(onNewIP) {
     key;
 
   function ipIterate(ip) {
+console.log("ip here", ip);
     if (!localIPs[ip]) onNewIP(ip);
     localIPs[ip] = true;
   }
@@ -37,21 +43,32 @@ function findIP(onNewIP) {
 
 
 
-var ul = document.createElement('ul');
-ul.textContent = 'Your IPs are: '
-document.body.appendChild(ul);
+var table = document.createElement('table');
+//ul.textContent = 'Your IPs are: '
+document.body.appendChild(table);
+
 
 function addIP(ip) {
   console.log('got ip: ', ip);
-  var li = document.createElement('li');
-  li.textContent = ip;
-  ul.appendChild(li);
+  var tr = document.createElement('tr');
+  var td = document.createElement('td');
+  var td2 = document.createElement('td');
+  td.textContent = ip;
+  td2.textContent  ="Custom value";
+  tr.appendChild(td);
+  tr.appendChild(td2);
+  
+  
+//  if (ip.match(/^(192\.168\.|169\.254\.|10\.|172\.(1[6-9]|2))
+//      document.getElemetsByTagName("ul")[1].appendChild(li);
+//  else
+//      document.getElementsByTagName("ul")[0].appendChild(li);
+  table.appendChild(tr);
 }
 
 findIP(addIP);
 
 </script>
-
 
 </body>
 </html>

@@ -1,0 +1,14 @@
+
+
+RTCPeerConnection:
+
+- createDataChannel: The createDataChannel() method on the RTCPeerConnection interface creates a new channel over which any kind of data may be transmitted.
+
+- createOffer: initiates the creation of an SDP offer for the purpose of starting a new WebRTC connection to a remote peer.
+
+* SDP: SDP (Session Description Protocol) is the standard describing a peer-to-peer connection. SDP contains the codec, source address, and timing information of audio and video.
+
+- setLocalDescription: method changes the local description associated with the connection. This description specifies the properties of the local end of the connection. The method takes a single parameter.
+
+
+ 
